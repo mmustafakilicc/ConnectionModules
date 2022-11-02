@@ -15,8 +15,8 @@ class LoggingInterceptor : Interceptor {
         val response = chain.proceed(request)
 
         val responseTime = System.nanoTime()
-        Timber.i(
-            "Response for %s in %.1fms%n%s",
+        Timber.d(
+            "Response for %s in %.1f ms%n%s",
             response.request.url,
             (responseTime - requestTime) / 1e6,
             response.headers
